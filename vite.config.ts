@@ -4,15 +4,15 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/mental-health-app/',
+  base: './',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Calm Space',
-        short_name: 'Calm Space',
+        name: 'Quiet Grove',
+        short_name: 'Quiet Grove',
         description: 'A private mood tracker, journal, breathing exercises, and coping toolkit for everyday mental wellness.',
         start_url: '.',
         display: 'standalone',

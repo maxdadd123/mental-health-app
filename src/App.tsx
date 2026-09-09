@@ -14,7 +14,7 @@ function App() {
         <header className="top-bar">
           <Link to="/" className="brand">
             <span className="brand-mark" aria-hidden="true" />
-            Calm Space
+            Quiet Grove
           </Link>
           <Link to="/resources" className="help-link">
             Need help now?
