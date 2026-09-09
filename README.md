@@ -36,7 +36,25 @@ Then open the printed local URL in your browser.
 - `npm run preview` — preview the production build locally
 - `npm run lint` — run the linter
 
+## Installing it as an app (PWA)
+
+Calm Space is a Progressive Web App: once it's built and hosted (or run via
+`npm run preview`), it can be installed to a phone or desktop home screen and works
+offline like a native app. The dev server (`npm run dev`) does **not** register the
+service worker — use `npm run build && npm run preview`, or a real deployment, to test
+installability.
+
+- **Android (Chrome)** — open the site, tap the menu, choose "Install app" (or "Add to
+  Home screen").
+- **iPhone/iPad (Safari)** — open the site, tap Share, choose "Add to Home Screen".
+- **Desktop (Chrome/Edge)** — open the site, click the install icon in the address bar.
+
+To make it installable for others, deploy the contents of `npm run build`'s `dist/`
+folder to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, etc.) —
+PWA installability requires HTTPS.
+
 ## Tech stack
 
-React, TypeScript, and Vite, with client-side routing via `react-router-dom` and
-persistence via `localStorage`. No backend or account required.
+React, TypeScript, and Vite, with client-side routing via `react-router-dom`,
+persistence via `localStorage`, and offline/installable support via
+`vite-plugin-pwa`. No backend or account required.
