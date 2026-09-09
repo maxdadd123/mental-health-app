@@ -49,9 +49,22 @@ installability.
 - **iPhone/iPad (Safari)** — open the site, tap Share, choose "Add to Home Screen".
 - **Desktop (Chrome/Edge)** — open the site, click the install icon in the address bar.
 
-To make it installable for others, deploy the contents of `npm run build`'s `dist/`
-folder to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, etc.) —
-PWA installability requires HTTPS.
+### Live deployment (GitHub Pages)
+
+This repo includes `.github/workflows/deploy.yml`, which builds the app and deploys it
+to GitHub Pages on every push to `main`. To turn it on (one-time setup):
+
+1. The repository must be **public** (GitHub Pages needs a paid plan for private repos).
+2. In repo **Settings → Pages → Build and deployment**, set **Source** to
+   **GitHub Actions**.
+
+After that, pushes to `main` publish automatically to
+`https://<owner>.github.io/mental-health-app/` — open that URL on your phone and use
+"Add to Home Screen" / "Install app" to install it.
+
+Note: `vite.config.ts` sets `base: '/mental-health-app/'` to match this GitHub Pages
+path. If you deploy elsewhere (a custom domain, a different host, or the repo root),
+update or remove that `base` setting to match.
 
 ## Tech stack
 
